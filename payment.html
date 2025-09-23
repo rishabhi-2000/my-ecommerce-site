@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Payment</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #f8f8f8; }
+    .container {
+      max-width: 400px; margin: 80px auto; background: white; padding: 30px;
+      border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    h2 { text-align: center; margin-bottom: 20px; }
+    label { display: block; margin: 10px 0 5px; }
+    input {
+      width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 8px;
+    }
+    .btn {
+      background: #ff758c; border: none; color: white; padding: 12px; width: 100%;
+      margin-top: 20px; border-radius: 8px; cursor: pointer; font-size: 1em;
+    }
+    .btn:hover { background: #ff5273; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Payment</h2>
+    <form onsubmit="proceedPay(event)">
+      <label>Card Number</label>
+      <input type="text" required maxlength="16">
+      <label>Expiry Date</label>
+      <input type="text" placeholder="MM/YY" required>
+      <label>CVV</label>
+      <input type="password" maxlength="3" required>
+      <button type="submit" class="btn">Proceed to Pay</button>
+    </form>
+  </div>
+
+  <script>
+    function proceedPay(e) {
+      e.preventDefault();
+      window.location.href = 'thankyou.html';
+    }
+  </script>
+</body>
+</html>
