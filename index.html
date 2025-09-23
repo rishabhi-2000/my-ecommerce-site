@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Clothify Store</title>
+  <style>
+    body {
+      margin: 0; font-family: Arial, sans-serif; background: #f9f9f9; color: #333;
+    }
+    header {
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      color: white; padding: 60px 20px; text-align: center;
+    }
+    header h1 { font-size: 3em; margin: 0; }
+    header p { font-size: 1.2em; margin-top: 10px; }
+    .products {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px; padding: 40px;
+    }
+    .card {
+      background: white; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      overflow: hidden; transition: transform 0.2s;
+    }
+    .card:hover { transform: translateY(-5px); }
+    .card img { width: 100%; height: 250px; object-fit: cover; }
+    .card-content { padding: 20px; }
+    .card h3 { margin: 0 0 10px; font-size: 1.2em; }
+    .card p { font-size: 0.9em; color: #666; }
+    .price { font-weight: bold; margin: 10px 0; font-size: 1.1em; }
+    .btn {
+      background: #ff758c; border: none; color: white; padding: 10px 20px;
+      border-radius: 8px; cursor: pointer; transition: background 0.3s;
+    }
+    .btn:hover { background: #ff5273; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Clothify</h1>
+    <p>Trendy Clothing for Every Style</p>
+  </header>
+
+  <section class="products">
+    <div class="card">
+      <img src="https://via.placeholder.com/300x250?text=T-Shirt" alt="T-Shirt">
+      <div class="card-content">
+        <h3>Casual T-Shirt</h3>
+        <p>Soft cotton T-shirt for everyday wear.</p>
+        <div class="price">$25</div>
+        <button class="btn" onclick="buyProduct('Casual T-Shirt', '$25')">Buy Now</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/300x250?text=Jeans" alt="Jeans">
+      <div class="card-content">
+        <h3>Blue Jeans</h3>
+        <p>Comfort-fit jeans with classic style.</p>
+        <div class="price">$45</div>
+        <button class="btn" onclick="buyProduct('Blue Jeans', '$45')">Buy Now</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/300x250?text=Dress" alt="Dress">
+      <div class="card-content">
+        <h3>Summer Dress</h3>
+        <p>Light and breezy floral dress.</p>
+        <div class="price">$40</div>
+        <button class="btn" onclick="buyProduct('Summer Dress', '$40')">Buy Now</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/300x250?text=Jacket" alt="Jacket">
+      <div class="card-content">
+        <h3>Leather Jacket</h3>
+        <p>Stylish black leather biker jacket.</p>
+        <div class="price">$120</div>
+        <button class="btn" onclick="buyProduct('Leather Jacket', '$120')">Buy Now</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/300x250?text=Shirt" alt="Shirt">
+      <div class="card-content">
+        <h3>Formal Shirt</h3>
+        <p>Crisp white shirt for office wear.</p>
+        <div class="price">$35</div>
+        <button class="btn" onclick="buyProduct('Formal Shirt', '$35')">Buy Now</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/300x250?text=Hoodie" alt="Hoodie">
+      <div class="card-content">
+        <h3>Cozy Hoodie</h3>
+        <p>Warm hoodie perfect for chilly days.</p>
+        <div class="price">$50</div>
+        <button class="btn" onclick="buyProduct('Cozy Hoodie', '$50')">Buy Now</button>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function buyProduct(name, price) {
+      localStorage.setItem('selectedProduct', name + " - " + price);
+      window.location.href = 'form.html';
+    }
+  </script>
+</body>
+</html>
